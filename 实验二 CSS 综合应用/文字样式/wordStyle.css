@@ -1,0 +1,22 @@
+body{
+  text-align: center;
+}
+
+h1{
+  text-align: center;
+  font-family: LiSu;
+  color: red;
+  font-size: 48px;
+}
+
+.author{
+  font-family: SimSun, STSong;
+  color: #cc9900;
+  font-size: 24px;
+}
+
+.content{
+  font-family: LiSu;
+  color: blue;
+  font-size: 32px;
+}

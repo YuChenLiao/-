@@ -1,0 +1,15 @@
+h1 {
+  text-align: center;
+}
+
+.percent {
+  line-height: 10%;
+}
+
+.line {
+  text-decoration:overline; 
+}
+
+.indent {
+  text-indent: 0.75cm;
+}
