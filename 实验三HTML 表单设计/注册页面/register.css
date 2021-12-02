@@ -1,0 +1,38 @@
+.content {
+  height: 100%;
+  padding-left: .2rem;
+  padding-right: .2rem;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  border-left: 2px dashed cornflowerblue;
+  border-right: 2px dashed cornflowerblue;
+  text-align: justify;
+  text-align-last: justify;
+  position: relative;
+}
+
+.form {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: .15rem;
+  border-collapse: collapse;
+  border: 1px solid blue;
+}
+
+table.form tr {
+  height: .3rem;
+}
+
+table.form td {
+  vertical-align: text-top;
+  border: 1px solid blue;
+  line-height: .3rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
