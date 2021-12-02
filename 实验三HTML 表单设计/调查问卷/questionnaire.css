@@ -1,0 +1,41 @@
+.content {
+  background-color: cyan;
+  padding: .3rem;
+}
+
+.form-box {
+  border-top: 5px solid #fff;
+  border-left: 5px solid #fff;
+  border-right: 5px solid gray;
+  border-bottom: 5px solid gray;
+  background-color: lightskyblue;
+  background-size: 100%;
+  box-sizing: border-box;
+}
+
+.information {
+  font-size: .2rem;
+  text-align: left;
+  width: 100%;
+}
+
+.item {
+  border-top:2px solid gray;
+  border-bottom: 2px solid gray;
+  width: 100%;
+}
+
+.item th {
+  width: 100%;
+  display: inline-block;
+  padding-top: 5px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+.item-child {
+  font-size: .15rem;
+  margin-top: .15rem;
+  margin-bottom: .15rem;
+  padding-left: 15px;
+}
