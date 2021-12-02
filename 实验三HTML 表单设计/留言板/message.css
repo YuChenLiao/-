@@ -1,0 +1,92 @@
+.content {
+  width: 100%;
+  height: 100%;
+}
+
+/*第 1 图层样式*/
+#div1 {
+  background-color: #66ffff;
+  color: #66ffff;
+  width: 100%;
+  height: 6%;
+  display: flex;
+  box-sizing: border-box;
+  padding-left: 5px;
+  padding-right: 2%;
+  margin-bottom: 5px;
+}
+
+/*第 2 图层样式*/
+#div2 {
+  background-color: #f2f9fd;
+  color: #66ffff;
+  width: 100%;
+  height: 93%;
+  margin-top: 3px;
+  text-align: center;
+  box-sizing: border-box;
+  padding-left: 5px;
+  padding-left: 5px;
+}
+
+/*单元格 1 样式*/
+.td1 {
+  line-height: 22px;
+  font-size: 18px;
+  color: #339966;
+  width: 100px;
+  font-weight: bold;
+}
+
+/*单元格 2 样式*/
+.td2 {
+  line-height: 42px;
+  font-size: 18px;
+  color: #339966;
+  width: 100px;
+  font-weight: bold;
+}
+
+/*标题 1 样式*/
+.title1 {
+  font-size: 30px;
+  font-family: '黑体';
+  font-weight: bold;
+  text-align: left;
+  width: 50%;
+  color: #0033cc;
+  display: inline;
+  height: 40px;
+  line-height: 40px;
+}
+
+/*标题 2 样式*/
+.title2 {
+  font-size: 22px;
+  font-family: '黑体';
+  font-weight: bold;
+  text-align: right;
+  width: 50%;
+  color: #0033cc;
+  display: inline;
+  height: 40px;
+  line-height: 40px;
+}
+
+table {
+  width: 100%;
+}
+
+.information tr th{
+  border: 2px solid #fff;
+  line-height: .3rem;
+  font-size: .2rem;
+  text-align: left;
+  color: green;
+}
+
+.tip {
+  color: blue;
+  font-size: .15rem;
+  border: 2px solid #fff;
+}

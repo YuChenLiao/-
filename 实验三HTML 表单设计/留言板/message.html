@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+  <head>
+    <link 
+      rel="stylesheet"
+      type="text/css"
+      href="message.css"
+    >
+    <link 
+      rel="stylesheet"
+      type="text/css"
+      href="../reset.css"
+    >
+  </head>
+  <body>
+    <div class="content">
+      <div id="div1">
+        <div class="title1">留言板</div>
+        <div class="title2">科技工作者建言</div>
+      </div>
+      <div id="div2">
+        <div style="font-size: .2rem;color: red;text-align: left;">发表留言</div>
+        <table class="information">
+          <tr>
+            <th style="font-size: .2rem;border-right: none;">姓名</th>
+            <th style="text-align: left;border-left: none;"><input></th>
+          </tr>
+          <tr>
+            <th style="font-size: .2rem;border-right: none;">电子邮箱</th>
+            <th style="text-align: left;border-left: none;"><input style="width: 50%;"></th>
+          </tr>
+          <tr>
+            <th style="font-size: .2rem;border-right: none;">分类</th>
+            <th style="text-align: left;border-left: none;color: red;">
+              科技工作者建言&nbsp&nbsp&nbsp
+              <input type="radio" name="choice">不保密
+              <input type="radio" name="choice">保密
+              &nbsp&nbsp&nbsp留言类型：
+              <select style="width: 10%;"></select>
+            </th>
+          </tr>
+          <tr style="height: 1.5rem; line-height: 1.5rem;">
+            <th style="font-size: .2rem;border-right: none;line-height: 1.5rem;">留言</th>
+            <th style="text-align: left;border-left: none;position: relative;">
+              <textarea 
+                style="width: 65%;height: .8rem;position: absolute;transform: translate(0,-50%);top: 50%;"
+              ></textarea>
+            </th>
+          </tr>
+        </table>
+        <div class="tip">注:如果您的留言不便公开，请选择“保密”选项，提交后可凭系统反馈给您的留言编号、查询密码和您的姓名查询回复。</div>
+        <div class="tip"><input type="button" value="提交">&nbsp&nbsp&nbsp&nbsp&nbsp<input type="button" value="清空"></div>
+        <div class="tip">
+          <p style="text-align: left;color: black;">&nbsp&nbsp- 请遵守国家相关法律法规......</p>
+          <p style="text-align: left;color: black;">&nbsp&nbsp- 本网站拥有管理和......</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
