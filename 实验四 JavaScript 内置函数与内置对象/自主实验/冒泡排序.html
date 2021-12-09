@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="../reset.css">
+  <link rel="stylesheet" type="text/css" href="./number.css">
+</head>
+
+<body>
+  <div>js冒泡排序</div>
+  <script type="text/javascript">
+    let examplearr = [8, 94, 15, 88, 55, 76, 21, 39];
+    document.write("原数组如下：")
+    document.write("<br/>")
+    for(let i = 0;i<examplearr.length;i++)
+      document.write(examplearr[i]+"|")
+    document.write("<br/>")
+    document.write("排序后数组如下：")
+    document.write("<br/>")
+    for (i = 0; i < examplearr.length - 1; i++) {
+      for (j = 0; j < examplearr.length - 1 - i; j++) {
+        if (examplearr[j] > examplearr[j + 1]) {
+          let temp = examplearr[j];
+          examplearr[j] = examplearr[j + 1];
+          examplearr[j + 1] = temp;
+        }
+      }
+    }
+    for(let i = 0;i<examplearr.length;i++)
+      document.write(examplearr[i]+"|")
+  </script>
+</body>
+
+</html>
