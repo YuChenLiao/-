@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+  <head>
+    <link 
+      rel="stylesheet"
+      type="text/css"
+      href="../reset.css"
+    >
+    <link 
+      rel="stylesheet"
+      type="text/css"
+      href="number.css"
+    >
+  </head>
+  <script type="text/javascript">
+    function check() {
+      let a = document.getElementById('in').value
+      let myReg=/^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/
+      if(myReg.test(a)) {
+        alert("邮箱格式正确")
+      } else {
+        alert("邮箱格式错误")
+      }
+    }
+  </script>
+  <body>
+    <div>检查邮箱格式：</div>
+    <div><input id="in"><input type="button" value="验证" onclick="check()"></div>
+    <div></div>
+  </body>
+</html>
