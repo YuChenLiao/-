@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+  <head>
+    <link 
+      rel="stylesheet"
+      type="text/css"
+      href="../reset.css"
+    >
+    <link 
+      rel="stylesheet"
+      type="text/css"
+      href="object.css"
+    >
+  </head>
+  <body>
+    <div>1,循环输出数组:</div>
+    <div>
+      <script type="text/javascript">
+        let classmates = new Array("张三","李四","王五","赵六","孙七");
+        for(let i = 0;i < classmates.length;i++) {
+          document.write("&nbsp;&nbsp;"+classmates[i])
+          document.write("<br />") 
+        }
+        document.write("<br />")
+      </script>
+    </div>
+    <div>2,Math 对象显示圆周率:</div>
+    <div>
+      <script type="text/javascript">
+        document.write("<br />")
+        document.write("&nbsp;&nbsp;"+Math.PI)
+        document.write("<br />")
+        document.write("<br />")
+      </script>
+    </div>
+    <div>3,date对象:</div>
+    <div>
+      <script type="text/javascript">
+        let currentdate = new Date()
+        document.write("<br />")
+        document.write("&nbsp;&nbsp;"+currentdate)
+        document.write("<br />")
+        document.write("<br />")
+      </script>
+    </div>
+    <div>4,date对象方法:</div>
+    <div>
+      <script type="text/javascript">
+        let current = new Date()
+        document.write("<br />")
+        document.write(
+          "&nbsp;&nbsp;"+
+          current.getFullYear()+"年"+
+          current.getMonth()+"月"+
+          current.getDate()+"日&nbsp;&nbsp;"+
+          "星期"+current.getDay()
+        )
+        document.write("<br />")
+        document.write("<br />")
+      </script>
+    </div>
+    <div>4,string对象方法:</div>
+    <div>
+      <script type="text/javascript">
+        let s = "This Is A New String"
+        document.write("<br />")
+        document.write(s)
+        document.write("<br />")
+        document.write("长度："+s.length)
+        document.write("<br />")
+        document.write("转换小写："+s.toLowerCase())
+        document.write("<br />")
+        document.write("转换大写："+s.toUpperCase())
+        document.write("<br />")
+        document.write("返回第三个字符："+s.charAt(2))
+        document.write("<br />")
+        document.write("提取开头五个字符："+s.substr(0,5) )
+        document.write("<br />")
+        document.write("提取倒数五个字符："+s.substring(s.length-5,s.length))
+        document.write("<br />")
+        document.write("<br />")
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+  <head>
+    <link 
+      rel="stylesheet"
+      type="text/css"
+      href="../reset.css"
+    >
+    <link 
+      rel="stylesheet"
+      type="text/css"
+      href="number.css"
+    >
+  </head>
+  <script type="text/javascript">
+    function check() {
+      let a = document.getElementById('in').value
+      console.log(typeof(a))
+      for(let i = 0;i < a.length;i++) {
+        if((a[i] < '0' || a[i] > '9') && a[i] !== '.'){
+          alert("输入的不是数字")
+          return;
+        }
+      }
+      alert("整型："+parseInt(a)+"\n"+"浮点型："+parseFloat(a))
+    }
+  </script>
+  <body>
+    <div>判断是否为数字并转换：</div>
+    <div><input id="in"><input type="button" value="提交" onclick="check()"></div>
+    <div></div>
+  </body>
+</html>
