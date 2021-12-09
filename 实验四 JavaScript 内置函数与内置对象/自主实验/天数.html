@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link 
+      rel="stylesheet"
+      type="text/css"
+      href="../reset.css"
+    >
+    <link 
+      rel="stylesheet"
+      type="text/css"
+      href="number.css"
+    >
+  <title>天数计算器</title>
+  <script src="./year.js"></script>
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+  <h3>天数计算器</h3>
+  <div>
+    <label>起:</label>
+    <input type="text" id="beginYear">
+    <label >年</label>
+    <input type="text" id="beginMonth">
+    <label >月</label>
+    <input type="text" id="beginDay">
+    <label >日</label>
+  </div>
+  <br>
+  <div>
+    <label>止:</label>
+    <input type="text" id="endYear">
+    <label >年</label>
+    <input type="text" id="endMonth">
+    <label >月</label>
+    <input type="text" id="endDay">
+    <label >日</label>
+  </div>
+  <br>
+  <div>
+    <input type="button" id="submit" value="确定" onclick="test()">
+    <input type="button" id="cancel" value="取消">
+  </div>
+  <script>
+    function test() {
+      var minutes = 1000 * 60
+      var hours = minutes * 60
+      var days = hours * 24
+      var y1 = Number($("#beginYear").val());
+      var m1 = Number($("#beginMonth").val());
+      var d1 = Number($("#beginDay").val());
+      var y2 = Number($("#endYear").val());
+      var m2 = Number($("#endMonth").val());
+      var d2 = Number($("#endDay").val());
+      var date1 = $("#beginYear").val() +',' + $("#beginMonth").val() +','+ $("#beginDay").val();
+      var date2 = $("#endYear").val() +','+ $("#endMonth").val() + ','+$("#endDay").val();
+      var day1 = Date.parse(date1);
+      var day2 = Date.parse(date2);
+      d = day2 - day1;
+      d = d / days;
+      alert("之间有" + d + "天！");
+    }
+  </script>
+</body>
+</html>

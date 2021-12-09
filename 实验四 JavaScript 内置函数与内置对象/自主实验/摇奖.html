@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+  <head>
+    <link 
+      rel="stylesheet"
+      type="text/css"
+      href="../reset.css"
+    >
+    <link 
+      rel="stylesheet"
+      type="text/css"
+      href="number.css"
+    >
+  </head>
+  <script type="text/javascript">
+    function bonus() {
+      let a = []
+      for(let i = 0;i < 3;i++){
+        let num = Math.round(Math.random()*10)
+        if(a.indexOf(num) == -1)
+          a.push(num)
+      }
+      alert("幸运号码为：\n"+a[0]+"\n"+a[1]+"\n"+a[2])
+    }
+  </script>
+  <body>
+    <div>抽取三个幸运号码：</div>
+    <div><input type="button" value="摇奖" onclick="bonus()"></div>
+    <div></div>
+  </body>
+</html>
