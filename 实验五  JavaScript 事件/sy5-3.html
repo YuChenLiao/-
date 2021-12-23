@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+  <link 
+      rel="stylesheet"
+      type="text/css"
+      href="../reset.css"
+    >
+</head>
+<script type="text/javascript">
+  function mover() {
+    let div = document.getElementById('bc')
+    div.style.backgroundColor = "#99cc66"
+  }
+
+  function mout() {
+    let elem = document.getElementById("bc")
+    elem.style.backgroundColor = "#ff33ff"
+  }
+
+  function mmove() {
+    let el = document.getElementById("bt")
+    el.style.backgroundColor = "#0033ff"
+  }
+
+  function mdown() {
+    let e = document.getElementById("show")
+    e.value = "按下鼠标"
+  }
+
+  function mclick() {
+    let e = document.getElementById("show")
+    e.value = "单击鼠标"
+  }
+
+  function mdclick() {
+    let e = document.getElementById("show")
+    e.value = "双击鼠标"
+  }
+
+</script>
+<style>
+  form {
+    text-align: center;
+  }
+
+  div {
+    background: #33ff99;
+    width: 400px;
+    height: 200px;
+    margin: 0 auto;
+    font-size: .2rem;
+    text-align: center;
+  }
+</style>
+
+<body>
+  <div id="bc" onmouseover="mover()" onmouseout="mout()">
+    <h3>鼠标事件处理</h3>
+    <form>
+      <input type="text" value="" id="show">
+      <input 
+        type="button"
+        id="bt"
+        onmousedown="mdown()"
+        onclick="mclick()"
+        ondblclick="mdclick()" 
+        onmouseover="mmove()"
+      >
+    </form>
+  </div>
+</body>
+
+</html>
