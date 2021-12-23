@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<script type="text/javascript">
+  function keyDown() {
+    let key = event.keyCode
+    alert("按下的键的ASCII码为："+key)
+  }
+</script>
+
+<body>
+  <form>请按键:
+    <input type="text" onKeyDown="keyDown();">
+  </form>
+</body>
+</html>
