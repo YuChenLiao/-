@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="../reset.css">
+  <link rel="stylesheet" type="text/css" href="test.css">
+</head>
+<script type="text/javascript">
+  function checkUser() {
+    let user = document.getElementById("user")
+    let a = user.value
+    if (!a) {
+      alert("用户名不能为空")
+      return false
+    }else {
+      if (a.charAt(0) >= '0' && a.charAt(0) <= '9') {
+        alert("用户名不能以数字开头")
+        return false
+      }
+      if (a.length < 6 || a.length > 20) {
+        alert("用户名长度应在6~20个字符之间")
+        return false
+      }
+    }
+    return true
+  }
+
+  function checkPass() {
+    let pw = document.getElementById("pw")
+    if(!pw.value) {
+      alert("密码不能为空！")
+      return false
+    }
+    else
+      if(pw.value.length<6 || pw.value.length>20) {
+        alert("密码长度应在6~20个字符之间")
+        return false
+      }
+    return true
+  }
+
+  function recheckPass() {
+    let pw = document.getElementById("pw")
+    let rpw = document.getElementById("rpw")
+    if(!rpw.value){
+      alert("请重复密码")
+      return false
+    }
+    else
+      if(pw.value !== rpw.value) {
+        alert("请重复正确的密码")
+        return false
+      }
+    return true
+  }
+
+  function checkEmail() {
+    let reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/
+    let email = document.getElementById("email")
+    if(email.value) {
+      const flag = reg.test(email.value)
+      if(!flag) {
+        alert("邮箱格式错误，请重新输入")
+        return false
+      } else {
+        return true
+      }
+    }
+    else {
+      alert("邮箱不能为空！")
+      return false
+    }
+  }
+
+  function sub() {
+    if(!checkUser()) {
+      let user = document.getElementById("user")
+      user.focus()
+      return null
+    }
+    if(!checkPass()) {
+      let pw = document.getElementById("pw")
+      pw.focus()
+      return null
+    }
+    if(!recheckPass()) {
+      let rpw = document.getElementById("rpw")
+      rpw.focus()
+      return null
+    }
+    if(!checkEmail()) {
+      let email = document.getElementById("email")
+      email.focus()
+      return null
+    }
+  }
+</script>
+
+<body style="height: 100%;">
+  <div class="box" style="font-size: .2rem;">
+    <div class="content">
+      <p>表单验证</p>
+      <form>
+        用户名：<input id="user">
+        <br>
+        密码：<input id="pw" type="password">
+        <br>
+        确认密码：<input id="rpw" type="password">
+        <br>
+        电子邮件：<input id="email">
+        <br>
+        <input type="submit" value="提交" onclick="sub()">
+        <input type="reset" value="重置">
+      </form>
+    </div>
+
+  </div>
+</body>
+
+</html>
