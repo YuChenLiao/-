@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<script type="text/javascript">
+  pageOpen = new Date()
+  console.log(pageOpen)
+  function stay() {
+    console.log("调用")
+    pageClose = new Date();
+    minutes = (pageClose.getMinutes()-pageOpen.getMinutes())
+    seconds = (pageClose.getSeconds()-pageOpen.getSeconds())
+    time = (seconds+(minutes*60))
+    time = (time+"秒钟")
+    alert("您一共停留了"+time+"欢迎下次再来！")
+    return "您一共停留了"+time+"欢迎下次再来！"
+  }
+  window.onbeforeunload=function(e){     
+　　var e = window.event||e; 
+    pageClose = new Date();
+    minutes = (pageClose.getMinutes()-pageOpen.getMinutes())
+    seconds = (pageClose.getSeconds()-pageOpen.getSeconds())
+    time = (seconds+(minutes*60))
+    e.preventDefault();
+　　e.returnValue=("您一共停留了"+time+"欢迎下次再来！");
+} 
+</script>
+
+<body>
+  计算停留时间
+  <a href="https://www.bilibili.com/">跳转</a>
+</body>
+</html>
