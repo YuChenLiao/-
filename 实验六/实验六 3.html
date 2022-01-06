@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>3</title>
+    </head>
+    <style type="text/css">
+        .div1{
+            background:#009933; 
+            width:400px; 
+            height:300px; 
+            margin:0px auto;
+            border:2px dotted #ff3300;
+            color:white;
+        }
+        table{
+            margin:0 auto;
+            font-weight:bold;
+        }
+        h2{
+            font-size:28px;
+            text-align:center;
+        }
+        button{
+            background-color:lightgray;
+            height: 40px;
+            width: 60px;
+        }
+        input{
+            border-style: none;
+        }
+        select{
+            width: 250px;
+            height: 130px;
+            padding: 5px;
+        }
+    </style>
+    <body>
+        <div class="div1">
+            <h2 style="font-family: '宋体';">福利彩票投注助手</h2>
+            <br>
+            <table class="tb1">
+                <tr>
+                    <td><button id="bt1">机选1注</button></td>
+                    <td rowspan="3">
+                        <select size="5" id="showOption">
+                            <!--option中的value是送往服务器的值-->
+                        </select>
+                    </td>
+                    <td><button id="deleteSelect">删除</button></td>
+                </tr>
+                <tr>
+                    <td>
+                        <button id="bt2">机选5注</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button id="bt3">机选10注</button>
+                    </td>
+                    <td><button id="delteAll">全部删除</button></td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            window.onload=function() {
+                var bt = document.getElementsByTagName('button');
+                var len = bt.length;
+                for(var i = 0; i < len; i++) {
+                    bt[i].onclick = function (ev) {
+                        var ev = ev || window.event;//事件
+                        var target = ev.target || ev.srcElement;//获得事件源
+                        var id = target.id;
+                        if(id == "bt1" || id == "bt2" || id == "bt3"){
+                            init();//注意要先把原来存在option清空
+                            showoption();
+                        }
+                        else if(id == "deleteSelect") delSelect();//只删除当前选中的列表
+                        else  delSelectAll();//删除所有
+                    }
+                }
+            }
+            function init(){
+                var objSelect = document.getElementById("showOption");
+                var oplen = objSelect.options.length;
+                if(oplen){
+                    for(var i = 0; i < oplen; i++)
+                        objSelect.options.remove(0);
+                }
+            }
+            function showoption(){
+                var number = new Array();
+                var objsel = document.getElementById("showOption");
+                for (var j = 0; j < objsel.size; j++){
+                    var list = "";
+                    for (var i = 0; i < 7; i++){
+                        number[i]=Math.floor(Math.random()*30+1);
+                        if (number[i]<10) number[i]="0"+number[i];//前导0
+                    }
+                    list = number.join(" ");
+                    var opt = document.createElement("option"); //创建一个列表项option
+                    var opt_text = document.createTextNode(list); //创建一个文本节点
+                    opt.value = j;
+                    opt.appendChild(opt_text); //将新的列表项节点加入DOM树
+                    opt.innerHTML = list;
+                    if(j === 0) {
+                        opt.selected = true;
+                        opt.style.backgroundColor = "blue";
+                    }
+                    objsel.appendChild(opt); //将新文本节点加入DOM树
+                }
+            }
+            function delSelect() {
+                var objSelect = document.getElementById( "showOption");
+                //selectedIndex 返回被选中的选项的下标，空选项返回-1
+                var strIndex = objSelect.selectedIndex;
+                if (strIndex != -1){
+                    objSelect.options.remove(strIndex);
+                }
+                else{
+                    alert("请先选择列表项后再删除!");
+                }
+            }
+
+            function delSelectAll() {
+                var objSelect = document.getElementById("showOption");
+                var oplen = objSelect.options.length;
+                if (oplen){
+                    for (var i = 0; i < oplen; i++ ){
+                        objSelect.options.remove(0);
+                    }
+                }
+                else{
+                    alert("无可删除内容！");
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>自主实验</title>
+    </head>
+    <style>
+        #left,#right{
+            width: 150px;
+            height: 250px;
+        }
+        button{
+            width: 45px;
+            height: 25px;
+        }
+    </style>
+    <body>
+        <select size="1">
+            <option>销售部</option>
+            <option>行政部</option>
+            <option>财务部</option>
+        </select>
+        <br>
+        <table>
+            <tr>
+                <td>
+                    <select size="4" id="left">
+                        <option>张明</option>
+                        <option>李小双</option>
+                        <option>曹爽</option>
+                        <option>张三</option>
+                    </select>
+                </td>
+                <td>
+                    <button id="left_right_1" onclick="leftToRight1()"> > </button><br>
+                    <button id="left_right_all" onclick="leftToRightAll()"> >>> </button><br>
+                    <button id="right_left_1" onclick="rightToLeft1()"> < </button><br>
+                    <button id="right_left_all" onclick="rightToLeftAll()"> <<< </button>
+                </td>
+                <td>
+                    <select size="4" id="right">
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <script>
+            function leftToRight1() {
+               var lefts = document.getElementById("left");
+               var rights = document.getElementById("right");
+               var index = lefts.options.selectedIndex;
+               if(index == -1) alert("请选中一个员工！");
+               else{
+                   var opt = lefts.options[index];
+                   lefts.options.remove(index);
+                   rights.options.add(opt);
+               }
+            }
+            function leftToRightAll() {
+                var lefts = document.getElementById("left");
+                var rights = document.getElementById("right");
+                var leftLen = lefts.options.length;
+                for(var i = 0; i < leftLen; i++){
+                    var opt = lefts.options[0];
+                    lefts.options.remove(0);
+                    rights.options.add(opt);
+                }
+            }
+            function rightToLeft1() {
+                var lefts = document.getElementById("left");
+                var rights = document.getElementById("right");
+                var index = rights.options.selectedIndex;
+                if(index == -1) alert("请选中一个员工！");
+                else{
+                    var opt = rights.options[index];
+                    rights.options.remove(index);
+                    lefts.options.add(opt);
+                }
+            }
+            function rightToLeftAll() {
+                var lefts = document.getElementById("left");
+                var rights = document.getElementById("right");
+                var rightLen = rights.options.length;
+                for(var i = 0; i < rightLen; i++){
+                    var opt = rights.options[0];
+                    rights.options.remove(0);
+                    lefts.options.add(opt);
+                }
+            }
+        </script>
+    </body>
+</html>

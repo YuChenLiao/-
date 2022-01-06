@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>1</title>
+    </head>
+    <body bgcolor="skyblue">
+        <script>
+            document.write("当前文档的标题："+document.title+"<br>");
+            document.write("当前文档的URL"+document.URL+"<br>");
+            document.write("当前文档的背景色："+document.bgColor+"<br>");
+            document.write("当前文档的最后修改日期："+document.lastModified+"<br>");
+            document.write("当前文档包含"+document.links.length+"个超链接<br>");
+            document.write("当前文档包含"+document.images.length+"个图像<br>");
+            var i,cell;
+            for(i=0;i<document.all.length;i++){
+                cell=document.all[i];
+                if(i>0){
+                    document.write(",");
+                }
+                document.write(cell.tagName);
+            }
+        </script>
+    </body>
+</html>

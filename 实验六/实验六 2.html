@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>2</title>
+    </head>
+    <style type="text/css">
+        div{
+            background:#009933; 
+            width:400px; 
+            height:300px; 
+            margin:0px auto;
+            border:2px dotted #ff3300; 
+            color:white;
+        }
+        form{ 
+            margin:0 auto;
+        }
+        table{
+            margin:0 auto;
+            font-weight:bold;
+        } 
+        h2{
+            font-size:28px;
+            text-align:center;                       
+        }
+        #clear{
+            background-color: #7F9CCB;
+            height: 80px;
+            width: 45px;
+        }
+    </style>
+    <body>
+        <div>
+            <h2>福利彩票投注助手</h2>
+            <br><br>
+            <table>
+                <tr>
+                    <td>
+                        彩票号码 <input type="text" id="show1">&nbsp;<button id="tou1">投注</button>
+                    </td>
+                    <td rowspan="3"><button id="clear" >清空</button></td>
+                </tr>
+                <tr>
+                    <td>
+                        彩票号码 <input type="text" id="show2">&nbsp;<button id="tou2">投注</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        彩票号码 <input type="text" id="show3">&nbsp;<button id="tou3">投注</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            window.onload=function() {
+                var bt = document.getElementsByTagName('button');
+                var len = bt.length;//按钮数目24
+                document.getElementById("show1").value = "";
+                document.getElementById("show2").value = "";
+                document.getElementById("show3").value = "";
+                for(var i = 0; i < len; i++){
+                    bt[i].onclick=function(ev){
+                        var ev = ev || window.event;//事件
+                        var target = ev.target || ev.srcElement;//获得事件源
+                        var id = target.id;
+                        var showNumber = "";
+                        for(var j = 0; j < 7; j++){
+                        if(j) showNumber += " ";
+                        showNumber += Math.floor(Math.random()*30+1);
+                        }
+                        //alert(showNumber + "xx" + id);
+                        //改变input中的内容要用value，而不是innerHTML/TEXT
+                        if(id == 'tou1') document.getElementById("show1").value = showNumber;
+                        else if(id == "tou2") document.getElementById("show2").value = showNumber;
+                        else if(id == "tou3") document.getElementById("show3").value = showNumber;
+                        else{
+                            document.getElementById("show1").value = "";
+                            document.getElementById("show2").value = "";
+                            document.getElementById("show3").value = "";
+                        }
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
